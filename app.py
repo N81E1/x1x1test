@@ -18,14 +18,13 @@ from linebot.v3.webhooks import (
     TextMessageContent
 )
 import os
-from linebot import LineBotApi    #line-bot-sdk：用於發送 Line Bot 訊息與圖片通知。
-from linebot.models import TextSendMessage, ImageSendMessage
+
 
 app = Flask(__name__)
 
 LINE_BOT_TOKEN = Configuration(access_token=os.getenv('CHANNEL_ACCESS_TOKEN'))
 LINE_USER_ID =WebhookHandler(os.getenv('CHANNEL_SECRET'))
-line_bot_api = LineBotApi(LINE_BOT_TOKEN)
+
 
 @app.route('/')
 def home():
